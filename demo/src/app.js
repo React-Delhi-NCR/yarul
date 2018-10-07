@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import demoImage from '../assets/tech.jpg';
+
 import { Steps } from '../../src/index';
 
 ReactDOM.render(

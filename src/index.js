@@ -1,3 +1,3 @@
-import Alert from './components/Alert';
+import Steps from './components/Steps';
 
-export { Alert };
+export { Steps };

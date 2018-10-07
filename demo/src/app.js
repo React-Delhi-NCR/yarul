@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import demoImage from '../assets/tech.jpg';
-import { Alert, FormInput } from '../../src/index';
+import { Alert, FormInput, Header, CSSMintHeader } from '../../src/index';
+
 
 ReactDOM.render(
   <div style={{ width: '500px', margin: '50px auto' }}>
@@ -53,6 +54,16 @@ ReactDOM.render(
 
       <FormInput type="password" />
     </form>
+
+		<div className="box">
+		<h3>GitHub Header</h3>
+			<Header links={['one', 'two', 'three', 'four']}/>
+		</div>
+
+		<div className="box">
+			<h3>CSSMintHeader</h3>
+			<CSSMintHeader links={['one', 'two', 'three', 'four']} />
+		</div>
   </div>,
   document.getElementById('root')
 );

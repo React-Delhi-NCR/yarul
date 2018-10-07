@@ -1,28 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FormInput = ({ type, label, className, options, ...props }) => {
+const FormInput = ({ type, placeholder, className, options, ...props }) => {
   if (type === 'select') {
     return (
       <div className={`cm-select-input ${className}`}>
         <select {...props}>
           {options.map(({ value, name }, index) => (
-            <option key={`${name}-${index}`} value={value}>{name}</option>
+            <option key={`${name}-${index}`} value={value}>
+              {name}
+            </option>
           ))}
         </select>
       </div>
     );
   } else if (type === 'textarea') {
-    return <textarea className={className} {...props} />;
+    return (
+      <textarea
+        className={className}
+        placeholder={placeholder || 'Enter text'}
+        {...props}
+      />
+    );
   } else if (type === 'file') {
     return (
       <div className="cm-file-input">
-        <div className="file-input-label">{label}</div>
+        <div className="file-input-label">{placeholder || 'Upload a file'}</div>
         <input type={type} />
       </div>
     );
   } else {
-    return <input type={type} className={className} {...props} />;
+    return (
+      <input
+        type={type}
+        className={className}
+        placeholder={placeholder || `Enter ${type}`}
+        {...props}
+      />
+    );
   }
 };
 
@@ -41,19 +56,20 @@ FormInput.propTypes = {
     'select',
     'textarea',
   ]).isRequired,
-  label: PropTypes.string,
+  placeholder: PropTypes.string,
   className: PropTypes.string,
   options: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.string,
-      name: PropTypes.string,
+      value: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
     })
   ),
 };
 
 FormInput.defaultProps = {
-  label: 'Upload a file',
+  placeholder: '',
   className: '',
+  options: [{ value: '', name: 'Select an option' }],
 };
 
 export default FormInput;

@@ -40,14 +40,18 @@ ReactDOM.render(
 
       <FormInput type="file" />
 
+      <FormInput type="file" placeholder="upload image" />
+
       <FormInput
         type="select"
         options={[{ value: '0', name: 'zero' }, { value: '1', name: 'one' }]}
       />
 
+      <FormInput type="select" />
+
       <FormInput type="textarea" />
 
-      <FormInput type="password" placeholder="password" />
+      <FormInput type="password" />
     </form>
   </div>,
   document.getElementById('root')

@@ -1,3 +1,4 @@
 import Alert from './components/Alert';
+import MessageBar from './components/MessageBar';
 
-export { Alert };
+export { Alert, MessageBar };

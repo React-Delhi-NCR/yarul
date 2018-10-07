@@ -8,7 +8,7 @@
     "build": "./node_modules/.bin/webpack --config ./demo/webpack.config.js",
     "watch": "./node_modules/.bin/webpack -w --config ./demo/webpack.config.js",
     "start": "./node_modules/.bin/webpack -w --config ./demo/webpack.config.js",
-    "server": "./node_modules/http-server/bin/http-server"
+    "server": "./node_modules/.bin/http-server"
   },
   "repository": {
     "type": "git",

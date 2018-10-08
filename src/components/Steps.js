@@ -7,15 +7,16 @@ export default class Steps extends Component {
   render() {
     const { steps, active } = this.props;
     return (
-      <div>
+      <div className="steps">
         <ul className="progressbar">
           {
             steps.map((item, i) => {
               return (
                 <li
-                  key={i} style={{ width: (100 / steps.length) + '%' }}
+                  key={i}
                   className={i < active ? 'active' : null}
                 >
+                  <div className="before">{i}</div>
                   {item.title}
                 </li>
               )

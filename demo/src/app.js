@@ -1,23 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import demoImage from '../assets/tech.jpg';
 import MessageBarUsage from './MessageBarUsage';
-import { Alert, Sidebar, Header, CSSMintHeader, Steps, FormInput } from '../../src/index';
+import { Alert, Sidebar, Header, Steps, FormInput } from '../../src/index';
 
 ReactDOM.render(
 	<div style={{ width: '500px', margin: '50px auto' }}>
 		<Alert type="primary" className="mt-20">
-			SEcondaary
+			Secondary
 		</Alert>
+
 		<MessageBarUsage />
+
+		<div className="box">
+			<h3>Header Component</h3>
+			<Header links={['one', 'two', 'three', 'four']}/>
+		</div>
+
+		<Sidebar link={'Sidebar component'} />
+
+		<Steps steps={[
+      { title: 'Signup' },
+      { title: 'Login' },
+      { title: 'Profile' },
+      { title: 'Something' },
+      { title: 'Signup' },
+      { title: 'Login' },
+      { title: 'Profile' },
+      { title: 'Something' },
+    ]} active={3}></Steps>
+
     <form
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        height: '400px',
-        justifyContent: 'space-between',
-      }}
-    >
+				style={{
+					display: 'flex',
+					flexDirection: 'column',
+					height: '400px',
+					justifyContent: 'space-between',
+				}}
+      >
       <FormInput
         type="text"
         placeholder="text input"
@@ -45,9 +64,9 @@ ReactDOM.render(
       <FormInput type="file" placeholder="upload image" />
 
       <FormInput
-        type="select"
-        options={[{ value: '0', name: 'zero' }, { value: '1', name: 'one' }]}
-      />
+					type="select"
+					options={[{ value: '0', name: 'zero' }, { value: '1', name: 'one' }]}
+      	/>
 
       <FormInput type="select" />
 
@@ -55,28 +74,6 @@ ReactDOM.render(
 
       <FormInput type="password" />
     </form>
-  
-		<div className="box">
-		<h3>GitHub Header</h3>
-			<Header links={['one', 'two', 'three', 'four']}/>
-		</div>
-
-		<div className="box">
-			<h3>CSSMintHeader</h3>
-			<CSSMintHeader links={['one', 'two', 'three', 'four']} />
-		</div>
-  
-		<Sidebar link={'Anil Kumar'}></Sidebar>
-		<Steps steps={[
-      { title: 'Signup' },
-      { title: 'Login' },
-      { title: 'Profile' },
-      { title: 'Something' },
-      { title: 'Signup' },
-      { title: 'Login' },
-      { title: 'Profile' },
-      { title: 'Something' },
-    ]} active={3}></Steps>
 	</div>,
 	document.getElementById('root')
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CSSMintHeader = ({ links, className, ...props }) => {
+const Header = ({ links, className, ...props }) => {
 	return (
     <header className="cm-header">
         <div className="cm-logo cm-text-large">
@@ -26,14 +26,14 @@ const CSSMintHeader = ({ links, className, ...props }) => {
 	);
 };
 
-CSSMintHeader.defaultProps = {
+Header.defaultProps = {
 	type: '',
 	className: ''
 };
 
-CSSMintHeader.propTypes = {
+Header.propTypes = {
 	type: PropTypes.string,
 	className: PropTypes.string
 };
 
-export default CSSMintHeader;
+export default Header;

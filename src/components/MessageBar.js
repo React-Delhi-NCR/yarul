@@ -28,7 +28,7 @@ class MessageBar extends React.Component {
             const { onClose, autoHideDuration = 3000 } = this.props;
         setTimeout(onClose, autoHideDuration);
         }
-        
+
     }
     render() {
         const { message, isOpen, position } = this.props;
@@ -53,7 +53,6 @@ MessageBar.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     autoHideDuration: PropTypes.number,
     onClose: PropTypes.func.isRequired,
-    position: PropTypes.oneOf(['topLeft', 'topRight', 'bottomLeft', 'bottomRight']).isRequired,
     message: PropTypes.string.isRequired
 }
 
